@@ -5,22 +5,14 @@
       <input type="checkbox" [(ngModel)]="item.checked" >
       <input type="text" [(ngModel)]="item.task">
 
-      <button>
+      <button (click)="deleteItemTaskList(i)"><!--Não esqueça de passar o (i)indice-->
         <img src="assets/icons/icon-trash.svg" alt="Icone ">
       </button>
         <!-- {{item | json}} vai mostrar na tela o objeto -->
     </li>
-
-    <li>
-      <input type="checkbox" >
-      <input type="text" class="checked">
-
-      <button>
-        <img src="assets/icons/icon-trash.svg" alt="Icone ">
-      </button>
-    </li>
   </ul>
+
 </section>
 
 <app-todo-input-add-itens></app-todo-input-add-itens>
-<app-todo-button-delete-all *ngIf="taskList.length"></app-todo-button-delete-all>
+<app-todo-button-delete-all *ngIf="taskList.length" (click)="deleteAllTaskList()"></app-todo-button-delete-all>
